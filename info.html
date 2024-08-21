@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="src/output.css" />
+    <style>
+      * {
+        font-family: "poppins";
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="w-full bg-white z-[80] fixed top-0">
+      <div
+        class="conteiner mx-auto flex justify-between md:justify-around items-center px-3 py-2"
+      >
+        <div class="logo h-14 flex items-center">
+          <a href="index.html"
+            ><img
+              src="image/Mask group.png"
+              class="w-full h-full object-contain"
+          /></a>
+        </div>
+        <ul class="hidden md:flex items-center justify-between gap-7">
+          <li>
+            <a
+              class="sm:text-xs md:text-base hover:opacity-80 text-[#018491] font-semibold"
+              href="index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="sm:text-xs md:text-base hover:opacity-80 text-[#018491] font-semibold"
+              href="about.html"
+              >Tentang</a
+            >
+          </li>
+          <li>
+            <a
+              class="sm:text-xs md:text-base hover:opacity-80 text-[#018491] font-semibold"
+              href="partner.html"
+              >Rekan</a
+            >
+          </li>
+          <li>
+            <a
+              class="sm:text-xs md:text-base hover:opacity-80 text-[#018491] font-semibold"
+              href="service.html"
+              >Layanan</a
+            >
+          </li>
+          <li>
+            <a
+              class="sm:text-xs md:text-base hover:opacity-80 text-[#018491] font-semibold"
+              href="galeri.html"
+              >Galeri</a
+            >
+          </li>
+          <li>
+            <a
+              class="sm:text-xs md:text-base hover:opacity-80 text-[#018491] font-semibold"
+              href="info.html"
+              >Info</a
+            >
+          </li>
+          <li>
+            <a
+              class="sm:text-xs md:text-base hover:opacity-80 text-[#018491] font-semibold"
+              href=""
+              >Karir</a
+            >
+          </li>
+          <li>
+            <a
+              class="sm:text-xs md:text-base hover:opacity-80 text-[#018491] font-semibold"
+              href=""
+              >Kontak</a
+            >
+          </li>
+        </ul>
+        <button
+          onclick="openLogin()"
+          class="h-8 md:h-12 px-5 md:px-7 hover:opacity-80 text-white bg-[#018491] rounded-xl md:rounded-2xl text-center md:flex cursor-pointer"
+        >
+          <h3 class="m-auto text-sm md:text-base">Masuk/Daftar</h3>
+        </button>
+        <button
+          onclick="openNavbar()"
+          class="toggle h-14 flex items-center md:hidden"
+        >
+          <i class="ph ph-list text-4xl cursor-pointer text-[#018491]"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div
+      class="login w-full p-5 h-screen fixed z-[999] top-0 bg-bglogin translate-x-full transition duration-300"
+    >
+      <div
+        class="mx-auto mt-5 md:mt-10 bg-white py-20 px-5 w-fit h-fit rounded-3xl flex flex-wrap justify-center gap-5 relative"
+      >
+        <button onclick="closeLogin()" class="absolute top-5 right-5">
+          <i class="ph-bold ph-x text-3xl text-pudar cursor-pointer"></i>
+        </button>
+        <div class="p-10 hidden md:block bg-[#D9D9D9] md:w-fit rounded-xl">
+          <img src="image/Enter OTP-amico 2.png" class="w-full" />
+        </div>
+        <div class="h-fit md:pr-20">
+          <h2 class="text-2xl text-pudar font-bold mb-3">Sign In</h2>
+          <div class="mb-3">
+            <p class="mb-1 text-base font-normal">Email Address</p>
+            <input
+              type="email"
+              class="bg-[#D9D9D9] rounded-full py-2 px-6 w-80"
+            />
+          </div>
+          <div class="mb-6">
+            <p class="mb-1 text-base font-normal">Password</p>
+            <input
+              type="password"
+              class="bg-[#D9D9D9] rounded-full py-2 px-6 w-80 mb-1"
+            />
+            <p class="text-bglogin text-right">Lupa Password</p>
+          </div>
+          <div
+            class="w-80 py-2 cursor-pointer rounded-full mb-5 bg-sign flex hover:opacity-80"
+          >
+            <p class="mx-auto text-base font-medium text-white">Sign In</p>
+          </div>
+          <div
+            onclick="openCreate(),closeLogin()"
+            class="w-80 py-2 cursor-pointer rounded-full mb-5 bg-[#D9D9D9] flex hover:opacity-80"
+          >
+            <p class="mx-auto text-base font-medium">Create New Account</p>
+          </div>
+          <div
+            class="w-80 py-2 cursor-pointer rounded-full mb-5 bg-[#D9D9D9] flex gap-1 justify-center hover:opacity-80"
+          >
+            <img src="image/google.png" class="w-fit" />
+            <p class="text-base font-medium">Masuk/Daftar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="create w-full p-5 h-screen fixed z-[999] top-0 bg-bglogin -translate-x-full transition duration-300"
+    >
+      <div
+        class="mx-auto mt-3 md:mt-5 bg-white py-20 px-5 w-fit h-fit rounded-3xl flex flex-wrap justify-center gap-5 relative"
+      >
+        <button onclick="closeCreate()" class="absolute top-5 right-5">
+          <i class="ph-bold ph-x text-3xl text-pudar cursor-pointer"></i>
+        </button>
+        <div class="p-10 hidden md:block bg-[#D9D9D9] md:w-fit rounded-xl">
+          <img src="image/Enter OTP-amico 2.png" class="w-full" />
+        </div>
+        <div class="h-fit md:pr-20">
+          <h2 class="text-2xl text-pudar font-bold">New Account</h2>
+          <p class="mb-6 text-base font-normal">
+            Hi, Ayo bergabung bersama kami menjadi <br />mitra Insania Sinergia
+          </p>
+          <div class="mb-2">
+            <p class="mb-1 text-base font-normal">Nama</p>
+            <input
+              type="text"
+              class="bg-[#D9D9D9] rounded-full py-2 px-6 w-80"
+            />
+          </div>
+          <div class="mb-2">
+            <p class="mb-1 text-base font-normal">Email Address</p>
+            <input
+              type="email"
+              class="bg-[#D9D9D9] rounded-full py-2 px-6 w-80"
+            />
+          </div>
+          <div class="mb-2">
+            <p class="mb-1 text-base font-normal">Password</p>
+            <input
+              type="password"
+              class="bg-[#D9D9D9] rounded-full py-2 px-6 w-80 mb-1"
+            />
+          </div>
+          <div class="mb-1">
+            <p class="mb-1 text-base font-normal">Confirm Password</p>
+            <input
+              type="password"
+              class="bg-[#D9D9D9] rounded-full py-2 px-6 w-80 mb-1"
+            />
+          </div>
+          <div
+            class="w-80 py-2 cursor-pointer rounded-full mb-5 bg-sign flex hover:opacity-80"
+          >
+            <p class="mx-auto text-base text-white font-medium">
+              Create Account
+            </p>
+          </div>
+
+          <div
+            class="w-80 py-2 cursor-pointer rounded-full mb-1 border-2 border-sign flex hover:bg-tipis"
+          >
+            <p class="mx-auto text-base font-medium">Register With Google</p>
+          </div>
+          <p class="text-base font-normal text-black">
+            Sudah Punya Akun?<a
+              href="#"
+              onclick="openLogin(),closeCreate()"
+              class="text-sign ml-1"
+              >Login</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <aside
+      class="w-full h-screen bg-white bg-opacity-60 fixed z-[90] top-0 transition-all duration-200 ease-in-out md:hidden translate-x-full"
+    >
+      <div
+        class="content backdrop-blur h-full flex justify-center items-center"
+      >
+        <button
+          onclick="closeNavbar()"
+          class="absolute top-4 right-4 z-[99] text-[#018491] text-3xl md:hidden"
+        >
+          <i class="ph ph-x"></i>
+        </button>
+        <ul class="flex flex-col gap-2 text-center">
+          <li>
+            <a class="text-xs text-[#018491] font-semibold" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="text-xs text-[#018491] font-semibold" href="about.html"
+              >Tentang</a
+            >
+          </li>
+          <li>
+            <a class="text-xs text-[#018491] font-semibold" href="partner.html"
+              >Rekan</a
+            >
+          </li>
+          <li>
+            <a class="text-xs text-[#018491] font-semibold" href="service.html"
+              >Layanan</a
+            >
+          </li>
+          <li>
+            <a class="text-xs text-[#018491] font-semibold" href="galeri.html"
+              >Galeri</a
+            >
+          </li>
+          <li>
+            <a class="text-xs text-[#018491] font-semibold" href="info.html"
+              >Info</a
+            >
+          </li>
+          <li>
+            <a class="text-xs text-[#018491] font-semibold" href="">Karir</a>
+          </li>
+          <li>
+            <a class="text-xs text-[#018491] font-semibold" href="">Kontak</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <section class="py-28 mt-12 px-0 md:px-12 lg:px-32 bg-[#F5F5F5]">
+      <div
+        class="flex rounded-3xl flex-col lg:flex-row bg-white p-5 lg:p-0 gap-2 lg:gap-0 overflow-hidden"
+      >
+        <div
+          class="w-full lg:min-w-72 lg:h-full aspect-video lg:aspect-auto overflow-hidden bg-red-500 flex"
+        >
+          <img
+            src="image/Rectangle 111.png"
+            class="w-full h-full scale-125 bg-center bg-cover m-auto"
+          />
+        </div>
+        <div class="flex justify-center flex-col text-left px-4 gap-2">
+          <h1 class="text-2xl lg:text-3xl font-bold">Bursa Efek Indonesia</h1>
+          <p class="text-sm lg:text-base line-clamp-6">
+            Bursa efek adalah sebuah pasar yang berhubungan dengan pembelian dan
+            penjualan efek perusahaan yang sudah terdaftar di bursa itu. Bursa
+            efek tersebut, bersama-sama dengan pasar uang merupakan sumber utama
+            permodalan eksternal bagi perusahaan dan pemerintah.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="w-full bg-[#02546480] flex flex-col gap-7 md:gap-5 md:grid md:grid-cols-2 lg:flex lg:justify-around lg:flex-row px-7 md:px-24 py-14 text-white"
+    >
+      <div class="flex flex-col">
+        <img src="image/Mask group.png" class="w-fit" />
+        <div class="flex gap-2 mt-0 mb-2">
+          <i class="ph-bold ph-house text-lg md:text-xl"></i>
+          <h3 class="font-light text-sm md:text-base lg:text-lg">
+            Jl. Perintis Kemerdekaan No.59, Kota Makassar
+          </h3>
+        </div>
+        <div class="flex gap-2 mt-0">
+          <i class="ph-bold ph-phone text-lg md:text-xl"></i>
+          <h3 class="font-ligth text-sm md:text-base lg:text-lg">
+            +6281-2345-6782<br />insaniasinergia@gmail.com
+          </h3>
+        </div>
+      </div>
+      <div class="flex flex-col gap-2 md:gap-2 lg:gap-10 md:mt-16 lg:mt-0">
+        <h1 class="font-medium text-sm md:text-base lg:text-lg">
+          Layanan Insania Sinergia
+        </h1>
+        <ul class="font-light text-xs md:text-base lg:text-lg">
+          <li>Jasa Pembukaan</li>
+          <li>Jasa Pendampingan</li>
+          <li>Konsultasi Pajak</li>
+          <li>Perubahan Dan Pembuatan Akta</li>
+          <li>Kuasa Hukum Pengadilan Pajak</li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-2 md:gap-2 lg:gap-10">
+        <h1 class="font-medium text-sm md:text-base lg:text-lg md:ml-6">
+          Sumber Data
+        </h1>
+        <ul class="font-light text-sm md:text-base lg:text-lg md:ml-6">
+          <li>FAQ</li>
+          <li>Studi Kasus</li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-2 md:gap-2 lg:gap-10">
+        <h1 class="font-medium text-sm md:text-base lg:text-lg">Company</h1>
+        <ul class="font-light text-sm md:text-base lg:text-lg">
+          <li>About</li>
+          <li>Contact</li>
+          <li>Careers</li>
+          <li>Youtube</li>
+          <li>Instagram</li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      const sidebar = document.querySelector("aside");
+
+      function openNavbar() {
+        sidebar.classList.add("translate-x-0");
+        sidebar.classList.remove("translate-x-full");
+      }
+
+      function closeNavbar() {
+        sidebar.classList.remove("translate-x-0");
+        sidebar.classList.add("translate-x-full");
+      }
+
+      const login = document.querySelector(".login");
+
+      function openLogin() {
+        login.classList.add("translate-x-0");
+        login.classList.remove("translate-x-full");
+      }
+      function closeLogin() {
+        login.classList.remove("translate-x-0");
+        login.classList.add("translate-x-full");
+      }
+
+      const create = document.querySelector(".create");
+
+      function openCreate() {
+        create.classList.add("translate-x-0");
+        create.classList.remove("-translate-x-full");
+      }
+      function closeCreate() {
+        create.classList.remove("translate-x-0");
+        create.classList.add("-translate-x-full");
+      }
+    </script>
+  </body>
+</html>
